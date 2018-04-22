@@ -1,0 +1,10 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: djangoLab
+  buildpack: python_buildpack
+  command: gunicorn --env DJANGO_SETTINGS_MODULE=djangoLab.settings.production djangoLab.wsgi -b 0.0.0.0:$PORT
+  memory: 256MB
+  domain: eu-gb.mybluemix.net
+  host: python-django-basic-yikvz
